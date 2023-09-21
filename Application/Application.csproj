@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Rules\Rules.csproj" />
     <ProjectReference Include="..\VehicleValuator\Domain.csproj" />
   </ItemGroup>
 
