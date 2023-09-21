@@ -13,12 +13,7 @@ public class VehicleValuator
 
     public float ValueVehicle()
     {
-        float value = Vehicle.RetailPrice;
-        foreach (var rule in Rules)
-        {
-            value = rule.Value(Vehicle, value);
-        }
-        return value;
+        return Vehicle.ValueVehicle(Rules);
     }
 
     public List<IRule> Rules { get; private set; }

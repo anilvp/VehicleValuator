@@ -1,4 +1,6 @@
-﻿namespace Domain;
+﻿using Rules.Interfaces;
+
+namespace Domain;
 
 public class Vehicle
 {
@@ -8,6 +10,16 @@ public class Vehicle
         AgeInYears = ageInYears;
         Colour = colour;
         EngineBroken = engineBroken;
+    }
+
+    public float ValueVehicle(List<IRule> rules)
+    {
+        float value = RetailPrice;
+        foreach (var rule in rules)
+        {
+            value = rule.Value(this, value);
+        }
+        return value;
     }
 
     public float RetailPrice { get; private set; }
